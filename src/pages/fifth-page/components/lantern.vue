@@ -4,10 +4,10 @@
 
 <template>
   <div class="lantern">
-    <img src="@/assets/img/lantern/spot/1.png" alt="text" class="lantern-1">
-    <img src="@/assets/img/lantern/spot/2.png" alt="text" class="lantern-2">
-    <img src="@/assets/img/lantern/spot/3.png" alt="text" class="lantern-3">
-    <img src="@/assets/img/lantern/spot/4.png" alt="text" class="lantern-4">
+    <img src="@/assets/img/lantern/spot/1.png" alt="text" class="lantern-1 animate__animated animate__fadeIn">
+    <img src="@/assets/img/lantern/spot/2.png" alt="text" class="lantern-2 animate__animated animate__fadeIn">
+    <img src="@/assets/img/lantern/spot/3.png" alt="text" class="lantern-3 animate__animated animate__fadeIn">
+    <img src="@/assets/img/lantern/spot/4.png" alt="text" class="lantern-4 animate__animated animate__fadeIn">
   </div>
 </template>
 
