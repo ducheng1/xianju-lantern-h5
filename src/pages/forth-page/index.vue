@@ -1,15 +1,22 @@
 <script setup>
 import Board from '@/components/board/index.vue'
 import Elements from '@/pages/forth-page/components/elements.vue'
+
+const boardRef = shallowRef()
+
+function handleReset() {
+  boardRef.value.reset()
+}
 </script>
 
 <template>
   <div class="forth-page">
     <img src="@/assets/img/button/click-try.png" alt="button" class="button">
-    <Board />
+    <Board ref="boardRef" />
     <Elements />
     <img src="@/assets/img/text/forth.png" alt="text" class="text">
     <img src="@/assets/img/lantern/spot/1.png" alt="text" class="lantern">
+    <button class="reset-button" @click="handleReset">重置</button>
   </div>
 </template>
 
@@ -25,6 +32,25 @@ import Elements from '@/pages/forth-page/components/elements.vue'
     top: 44px;
     width: 272px;
     height: 65px;
+  }
+
+  .reset-button {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #ffabb5;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: rgba(17, 31, 44, 0.56);
+    z-index: 1000;
+
+    &:active {
+      background-color: #ff8a99;
+    }
   }
 
   .text {
