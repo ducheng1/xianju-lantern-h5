@@ -1,0 +1,78 @@
+@use 'normalize.css';
+@use 'animate.css';
+
+body {
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 100vh;
+  width: 100vw;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(#ffabb5 10%, #f3f89a 100%);
+}
+
+// 强制横屏展示
+@media screen and (orientation: portrait) {
+  body {
+    transform-origin: 0 0;
+    transform: rotate(90deg) translate(0, -100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+// 摇摆动画
+@keyframes swing {
+  from, to {
+    transform: rotateZ(-3deg);
+  }
+
+  50% {
+    transform: rotateZ(3deg);
+  }
+}
+
+// 从左至右擦除动画
+@keyframes clip {
+  from {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+
+  to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+// 从内到外圆形切割动画
+@keyframes round {
+  from {
+    clip-path: circle(0%);
+    opacity: 0;
+  }
+
+  to {
+    clip-path: circle(100%);
+    opacity: 1;
+  }
+}
+
+// 跳动动画
+@keyframes pulse {
+  from {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
