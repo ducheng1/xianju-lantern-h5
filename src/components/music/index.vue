@@ -7,16 +7,21 @@ const play = ref(false)
 function handlePlay() {
   play.value = !play.value
   if (play.value) {
-    startPlay()
+    audioRef.value.play()
   } else {
     audioRef.value.pause()
   }
 }
 
-function startPlay() {
-  audioRef.value.play()
+async function startPlay() {
+  try {
+    await audioRef.value.play()
+    play.value = true
+    window.removeEventListener('click', startPlay)
+  } catch (e) {
+    window.addEventListener('click', startPlay)
+  }
 }
-
 </script>
 
 <template>
