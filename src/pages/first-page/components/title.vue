@@ -83,12 +83,12 @@ function getMotion(index) {
 <template>
   <div class="title">
     <template v-for="(item, index) in strokeList" :key="index">
-      <Motion v-bind="getMotion(index)" :transition="{duration: 0.8, easing: 'ease-out'}">
+      <Motion v-bind="getMotion(index)" :transition="{duration: 1.2, easing: 'ease-out'}">
         <img :src="item" alt="pic" :class="['stroke', `stroke__${index}`]" />
       </Motion>
     </template>
     <Motion :initial="{opacity: 0, x: -100}" :animate="{opacity: 1, x: 0}"
-        :transition="{duration: 0.8, easing: 'ease-out'}">
+        :transition="{duration: 1, easing: 'ease-out'}">
       <img src="../../../assets/img/stroke/subtitle.png" alt="subtitle" class="subtitle" />
     </Motion>
   </div>

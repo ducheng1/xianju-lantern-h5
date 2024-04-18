@@ -11,7 +11,7 @@ const strokeList = computed(() => Object.entries(strokes).map(([_, value]) => {
 <template>
   <div class="right">
     <template v-for="(item,index) in strokeList" :key="index">
-      <Motion :initial="{opacity: 0, x: 100}" :animate="{opacity: 1, x: 0}" :transition="{duration: 0.8, easing: spring(), delay: 0.3}">
+      <Motion :initial="{opacity: 0, x: 100}" :animate="{opacity: 1, x: 0}" :transition="{duration: 2, easing: spring(), delay: 0.8}">
         <img :src="item" alt="pic" :class="['stroke', `stroke__${index}`]" />
       </Motion>
     </template>
