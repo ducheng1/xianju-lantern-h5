@@ -9,6 +9,7 @@ import ThirdPage from './pages/third-page/index.vue'
 import ForthPage from './pages/forth-page/index.vue'
 import FifthPage from './pages/fifth-page/index.vue'
 import { useCommonStore } from '@/store/modules/common.js'
+import Music from '@/components/music/index.vue'
 
 const modules = [EffectCreative]
 
@@ -63,6 +64,7 @@ function handleSwipe({activeIndex}) {
       <FifthPage />
     </SwiperSlide>
   </Swiper>
+  <Music />
 </template>
 
 <style lang="scss">
